@@ -42,24 +42,31 @@ django-chat-app-main/
 
 Quick Start
 ------------------------------------------------------------
+ <pre>
 1. Install Django
-   pip install django
+
+    pip install django
 
 2. Configure Secret Key
+
    Generate a key:
    python -c "from django.core.management.utils import get_random_secret_key as g; print(g())"
+
    Paste it into djangochat/settings.py:
+
    SECRET_KEY = 'paste-generated-key'
 
 3. Initialize the Database
+
    python manage.py makemigrations chat
    python manage.py migrate
 
 4. Run the Server
+
    python manage.py runserver 127.0.0.1:8080
    Open: http://127.0.0.1:8080/
    Use another free port if needed.
-
+</pre>
 ------------------------------------------------------------
 Routes
 ------------------------------------------------------------

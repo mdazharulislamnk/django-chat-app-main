@@ -4,7 +4,7 @@ Django Chat App
 A simple room-based chat app built with Django and jQuery polling. 
 Users enter a room name and username, then chat with messages stored in SQLite.
 
-------------------------------------------------------------
+
 Features
 ------------------------------------------------------------
 - Create or join rooms by name.
@@ -15,6 +15,8 @@ Features
 ------------------------------------------------------------
 Project Layout
 ------------------------------------------------------------
+
+<pre>
 django-chat-app-main/
 ├─ manage.py
 ├─ db.sqlite3
@@ -36,7 +38,8 @@ django-chat-app-main/
    ├─ home.html
    └─ room.html
 
-------------------------------------------------------------
+</pre>
+
 Quick Start
 ------------------------------------------------------------
 1. Install Django
@@ -60,13 +63,14 @@ Quick Start
 ------------------------------------------------------------
 Routes
 ------------------------------------------------------------
+<pre>
 Method   URL                        Description
 GET      /                          Home form (room_name, username)
 POST     /checkview                 Create/get room, redirect to /room/<name>/?username=<user>
 GET      /room/<name>/              Room page with messages
 GET      /getMessages/<room>/       JSON list of messages for polling
 POST     /send                      Create a message (room_id, username, message)
-
+</pre>
 ------------------------------------------------------------
 Username Propagation
 ------------------------------------------------------------
@@ -79,11 +83,12 @@ What’s Used and Why
 ------------------------------------------------------------
 Technology        Purpose
 ------------------------------------------------------------
+<pre>
 Python + Django   URL routing, ORM, migrations, admin, template rendering
 SQLite            Default dev DB; zero config, db.sqlite3 auto-created
 Templates + CSS   Avoids static setup; quick start
 jQuery (CDN)      Polling + AJAX form submit
-
+</pre>
 ------------------------------------------------------------
 App Modules
 ------------------------------------------------------------
@@ -117,13 +122,14 @@ templates/room.html
 ------------------------------------------------------------
 Windows Scaffolding (Optional)
 ------------------------------------------------------------
+<pre>
 mkdir django-chat-app-main && cd django-chat-app-main
 mkdir djangochat chat templates
 type NUL > manage.py
 cd djangochat && (type NUL > __init__.py) && (type NUL > settings.py) && (type NUL > urls.py) && (type NUL > asgi.py) && (type NUL > wsgi.py) && cd ..
 cd chat && (type NUL > __init__.py) && (type NUL > apps.py) && (type NUL > admin.py) && (type NUL > models.py) && (type NUL > views.py) && (type NUL > urls.py) && (type NUL > tests.py) && cd ..
 cd templates && (type NUL > home.html) && (type NUL > room.html) && cd ..
-
+</pre>
 SQLite file is created automatically during migrate.
 
 ------------------------------------------------------------
